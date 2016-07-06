@@ -160,7 +160,7 @@ augroup Markdown
 	autocmd FileType md setlocal filetype=markdown
 	autocmd FileType md setlocal spell
 	autocmd FileType markdown setlocal spell
-	autocmd FileType markdown nnoremap <Leader>s :set spell!<cr>
+	" autocmd FileType markdown nnoremap <Leader>s :set spell!<cr>
 	autocmd FileType markdown setlocal expandtab
 	autocmd FileType markdown setlocal nolist
 	autocmd FileType markdown nnoremap <leader>, ^dT0I* <Esc>o<CR>
@@ -178,7 +178,7 @@ augroup END
 "{{{ Textfile autocommands
 augroup TextFiles
 	au!
-	autocmd FileType txt nnoremap <Leader>s :set spell!<cr>
+	" autocmd FileType txt nnoremap <Leader>s :set spell!<cr>
 augroup END
 "}}}
 "}}}
