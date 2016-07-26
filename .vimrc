@@ -8,65 +8,72 @@ if filereadable(glob("~/.vimrc.local"))
 endif
 
 "Abbreviations Insert and Cmd modes ********** {{{
-iab sevearl several
+iab sevearl      several
+iab cna          can
 iab installtaion installation
-iab installtion installation
-iab nad and
-iab ahve have
-iab tihs this
-iab thier their
-iab teh the
-iab psvm public static void main(String [] args)
-iab @m@ durgaswaroop@gmail.com
-iab inorempa inoremap
-iab inoreamp inoremap
-iab nnorempa nnoremap
-iab vnorempa vnoremap
-iab syso System.out.println()<Esc>i
-cab inoreamp inoremap
-cab nnorempa nnoremap
-cab vnorempa vnoremap
-cab inorempa inoremap
+iab installtion  installation
+iab nad          and
+iab ahve         have
+iab tihs         this
+iab thier        their
+iab teh          the
+iab psvm         public static void main(String [] args)
+iab @m@          durgaswaroop@gmail.com
+iab inorempa     inoremap
+iab inoreamp     inoremap
+iab nnorempa     nnoremap
+iab vnorempa     vnoremap
+iab syso         System.out.println()<Esc>i
+cab inoreamp     inoremap
+cab nnorempa     nnoremap
+cab vnorempa     vnoremap
+cab inorempa     inoremap
 "}}}
 
 "{{{ All Set's and Let's 
-set pastetoggle=<F2>
-set nu relativenumber
-set numberwidth=1 bg=dark
-set ignorecase
-set smartcase
-set encoding=utf-8
-set fileencoding=utf-8
-set incsearch
-set wildmenu
-set scrolloff=3
-set shiftwidth=2
-set tabstop=2
-set laststatus=2
-set hlsearch
+" set shell=C:/Users/dperla/.babun/cygwin/bin/mintty.exe
+" set shellcmdflag=\ -c
+" set shellxquote=\"
+set autoread
 set backspace=2
 set backspace=indent,eol,start
-set wrap
-set linebreak
-set t_vb= "Disables the flashing from vb
+set clipboard=unnamed
+set complete=.,w,b,u,t,i,kspell
 set copyindent
-set noswapfile nobackup nowritebackup
 set cursorline
-set autoread
-set smarttab
+set display=lastline
+set encoding=utf-8
+set fileencoding=utf-8
+set fillchars=vert:│ "space saver
+set foldlevel=0
 set history=500
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set lazyredraw
+set linebreak
 set list
 set listchars=tab:\|\ ,eol:¬
-set complete=.,w,b,u,t,i,kspell
-set foldlevel=0
+set noswapfile nobackup nowritebackup
+set nu relativenumber
+set numberwidth=1 bg=dark
+set pastetoggle=<F2>
+set scrolloff=3
+set shiftwidth=2
+set smartcase
+set smarttab
 set splitright splitbelow
-set fillchars=vert:│ "space saver
-set clipboard=unnamed
-let g:fontSize=13
-let g:mapleader=" "
-let g:maplocalleader="\\"
-let g:scour_browser="Chrome"
-let g:scour_search_engine="Google"
+set t_vb= "Disables the flashing from vb
+set tabstop=2
+set wildmenu
+set wrap
+
+let g:fontSize            = 13
+let g:mapleader           = " "
+let g:maplocalleader      = "\\"
+let g:scour_browser       = "Chrome"
+let g:scour_search_engine = "Google"
 "}}}
 
 "Auto commands"{{{
@@ -95,10 +102,10 @@ augroup END
 augroup comments
 	au!
 	autocmd FileType java nnoremap <buffer> <localleader>c I//<Esc>
-	autocmd FileType c nnoremap <buffer> <localleader>c I//<Esc>
-	autocmd FileType vim nnoremap <buffer> <localleader>c I"<Esc>
-	autocmd FileType sh nnoremap <buffer> <localleader>c I#<Esc>
-	autocmd FileType ahk nnoremap <buffer> <localleader>c I;<Esc>
+	autocmd FileType c    nnoremap <buffer> <localleader>c I//<Esc>
+	autocmd FileType vim  nnoremap <buffer> <localleader>c I"<Esc>
+	autocmd FileType sh   nnoremap <buffer> <localleader>c I#<Esc>
+	autocmd FileType ahk  nnoremap <buffer> <localleader>c I;<Esc>
 augroup END
 "}}}
 
@@ -128,8 +135,8 @@ augroup END
 augroup C_stuff
 	au!
 	autocmd BufNewFile,BufWritePre,BufReadPre *.c setlocal foldmethod=marker
-	autocmd BufNewFile,BufWritePre,BufReadPre *.c nnoremap  silent! za
-	autocmd FileType c nnoremap <F5> :SCCompileRun<cr>
+	autocmd BufNewFile,BufWritePre,BufReadPre *.c nnoremap    silent! za
+	autocmd FileType                          c   nnoremap <F5> :SCCompileRun<cr>
 augroup END
 "}}}
 
@@ -168,9 +175,9 @@ augroup Markdown
 	autocmd FileType markdown onoremap ih :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\rkvg_"<CR>
 	autocmd FileType markdown onoremap ah :<C-u>execute "normal! ?^==\\+$\r:nohlsearch\r$VkOi"<CR>
 	autocmd FileType markdown onoremap lh :<c-u>execute "normal! ?^[-\|=]\\+$\rkV"<CR>
-	nnoremap <Leader>1 yypVr=o
-	nnoremap <Leader>2 yypVr-o
-	nnoremap <LocalLeader>1 jddkI# <Esc>
+	nnoremap <Leader>1      yypVr=o
+	nnoremap <Leader>2      yypVr-o
+	nnoremap <LocalLeader>1 jddkI#  <Esc>
 	nnoremap <LocalLeader>2 jddkI## <Esc>
 augroup END
 "}}}
@@ -196,6 +203,10 @@ augroup END
 "		endif
 "endfunction 
 
+" function! CSVAlign()
+" 	 mzvipga,`z
+" endfunction
+
 " function! ReadOnlyAlert()
 " 	if &readonly
 " 		hi Normal guibg=#550000
@@ -204,139 +215,159 @@ augroup END
 " 	endif
 " endfunction"}}}
 
-"Mappings - All of them "{{{
+"Mappings - All of them "{{{3
 
 "{{{ Random Mappings
-inoremap :q! <Esc>:q!<cr>
+inoremap :q!       <Esc>:q!<cr>
 inoremap <C-space> <c-p>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <C-S> <C-O>:update<CR>
+inoremap <down>    <nop>
+inoremap <left>    <nop>
+inoremap <right>   <nop>
+inoremap <up>      <nop>
+inoremap <C-S>     <C-O>:update<CR>
 
-nnoremap  za    
-nnoremap G Gzz
-nnoremap j gj
-nnoremap k gk
+nnoremap <silent>  za
+nnoremap G        Gzz
+nnoremap j        gj
+nnoremap k        gk
 " nnoremap j <nop>
 " nnoremap k <nop>
-nnoremap X :q<CR>
-nnoremap Y y$
-nnoremap zx :wq<CR>
-nnoremap zz :update<CR>
-nnoremap <localleader>s :call FixMySpelling()<cr>
-nnoremap [b :bprevious<cr> 
-nnoremap ]b :bnext<cr>
-nnoremap ]f :first<cr>
-nnoremap ]l :last<cr>
-nnoremap <silent> <localleader>f :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
-nnoremap <Leader>fs :Scour<cr>
+nnoremap X              :q<CR>
+nnoremap Y              y$
+nnoremap zx             :wq<CR>
+" nnoremap xq             :q!<CR>
+nnoremap zz             :update<CR>
+nnoremap <localleader>s :call          FixMySpelling()<cr>
+nnoremap <Leader>csv    :call          CSVAlign()<cr>
+nnoremap [b             :bprevious<cr>
+nnoremap ]b             :bnext<cr>
+nnoremap ]f             :first<cr>
+nnoremap ]l             :last<cr>
+nnoremap ]n             :cn<cr>
+nnoremap [n             :cp<cr>
+nnoremap ]p             :cp<cr>
+nnoremap [p             :cn<cr>
+nnoremap <silent>       <localleader>f :execute 'vimgrep /'.@/.'/g %'<CR>:copen<CR>
+nnoremap <Leader>fs     :Scour<cr>
+nnoremap <C-f>          /
 
 noremap <C-S> :update<CR>
 
-vnoremap <C-S> <C-C>:update<CR>
-vnoremap <C-C> "+y
-vnoremap > >gv
-vnoremap < <gv
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
-vnoremap <Up> dkP
-vnoremap <Down> djp
+vnoremap <C-S>    <C-C>:update<CR>
+vnoremap <C-C>    "+y
+vnoremap >        >gv
+vnoremap <        <gv
+vnoremap <Tab>    >gv
+vnoremap <S-Tab>  <gv
+vnoremap <Up>     dkP
+vnoremap <Down>   djp
+vnoremap <silent>  zf
 
+cnoremap w!! w !sudo tee %
 
 " map <C-V> "+gP
+"}}}
 
 "Plugin Specific Mappings {{{
 
-"{{{ NERDTree related
+"NERDTree related {{{ 
 nnoremap <LEADER>n :NTCustomToggle<CR>
-let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowExpandable  = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 command! -nargs=0 NTCustomToggle call NERDTreeFileToggler()
 autocmd! WinEnter * if exists('b:NERDTree') | execute 'normal R' | endif
 "}}}
-"
+
 "CtrlP {{{
 nnoremap <localleader>p :CtrlPMRU<cr>
 " nnoremap <localleader>p :CtrlPMixed<cr>
-let g:ctrlp_working_path_mode = 'rca' 
-let g:ctrlp_root_markers = ['pom.xml']
+let g:ctrlp_working_path_mode = 'rca'
+let g:ctrlp_root_markers      = ['pom.xml']
 "}}}
 
-"Undo Tree {{{
-nnoremap <Leader>u :UndotreeToggle<cr>
-if has("persistent_undo")
-	set undodir=~/.undodir/
-	set undofile
-endif
+"Undo Tree {{{"{{{
+" nnoremap <Leader>u :UndotreeToggle<cr>
+" if has("persistent_undo")
+" 	set undodir=~/.undodir/
+" 	set undofile
+" endif
+"}}}"}}}
+
+"Easy align {{{
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+"}}}
+
+"Vim Mpc  {{{
+nnoremap <LEADER>p    :MpcBrowser<cr>
+nnoremap <C-space> :TogglePlayback<cr>
 "}}}
 
 "}}}
 
 "All Leader Commands "{{{
-nnoremap <LEADER>r :vsp $MYVIMRC<CR>
-nnoremap <LEADER>sv :so $MYVIMRC<CR>
-nnoremap <LEADER>sc :so %<CR>
-nnoremap <LEADER>h :nohl<CR>
-nnoremap <LEADER>p :CtrlP<CR>
-nnoremap <LEADER>w :set wrap!<cr>
-nnoremap <LEADER>6 O<ESC>j
-nnoremap <LEADER>- o<ESC>k
-
+nnoremap <LEADER>r  :vsp $MYVIMRC<CR>
+nnoremap <LEADER>sv :so  $MYVIMRC<CR>
+nnoremap <LEADER>sc :so  %<CR>
+nnoremap <silent> <LEADER>h  :nohl<CR>
+" nnoremap <LEADER>p  :CtrlP<CR>
+nnoremap <LEADER>w  :set wrap!<cr>
+nnoremap <LEADER>6  O<ESC>j
+nnoremap <LEADER>-  o<ESC>k
 "}}}
 
 "Easily resize the splits"{{{
-nnoremap <C-Right> :vertical resize +5<CR>
-nnoremap <C-Left> :vertical resize -5<CR>
-nnoremap <C-Up> :res +5<CR>
-nnoremap <C-Down> :res -5<CR> 
+nnoremap <C-Right> :vert res +5<CR>
+nnoremap <C-Left>  :vert res -5<CR>
+nnoremap <C-Up>    :res  +5<CR>
+nnoremap <C-Down>  :res  -5<CR>
 "}}}
 
 "Moving tabs around "{{{
-nnoremap <silent> <A-Left> :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
+nnoremap <silent> <A-Left>  :execute 'silent! tabmove ' . (tabpagenr()-2)<CR>
 nnoremap <silent> <A-Right> :execute 'silent! tabmove ' . tabpagenr()<CR>
 "}}}
 
-"{{{ Automatic brackets complete mappings
-inoremap { {}<Left>
-inoremap {{ {
-inoremap {<CR> {<CR>}<Esc>O
+
+"Automatic brackets complete mappings {{{1
+inoremap {      {}<Left>
+inoremap {{     {
+inoremap {<CR>  {<CR>}<Esc>O
 inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
 
-inoremap " ""<Left>
-inoremap "" "
+inoremap "      ""<Left>
+inoremap ""     "
 inoremap <expr> " strpart(getline('.'), col('.')-1, 1) == "\"" ? "\<Right>" : "\"\"\<Left>"
 
-inoremap ' ''<Left>
-inoremap '' '
+inoremap '      ''<Left>
+inoremap ''     '
 inoremap <expr> ' strpart(getline('.'), col('.')-1, 1) == "\'" ? "\<Right>" : "\'\'\<Left>"
 
-inoremap ( ()<Left>
-inoremap (( (
-inoremap (<CR> (<CR>)<Esc>O
-inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap (      ()<Left>
+inoremap ((     (
+inoremap (<CR>  (<CR>)<Esc>O
+inoremap <expr> ) strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
 
-inoremap [ []<Left>
-inoremap [[ [
-inoremap [<CR> [<CR>]<Esc>O
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
-"}}}
+inoremap [      []<Left>
+inoremap [[     [
+inoremap [<CR>  [<CR>]<Esc>O
+inoremap <expr> ] strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+"}}}1
 
 "Mapping Arrow keys to something useful "{{{
-nnoremap <up> ddkkp
-nnoremap <down> ddp
-nnoremap <left> <nop>
-nnoremap <right> :vsplit <CR> 
+nnoremap <up>    ddkkp
+nnoremap <down>  ddp
+nnoremap <Right> :vsplit <CR>
+nnoremap <Left>  :vsplit <CR> <C-w>r
 "}}}
 
-"{{{ surround type particles mappings
+"surround type particles mappings {{{
 "Surround with Particles. Should probably put this in a different file
 """"""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <LEADER>' viw<ESC>a'<ESC>bi'<ESC>el
-nnoremap <LEADER>" viw<ESC>a"<ESC>bi"<ESC>el
-vnoremap <LEADER>" viw<ESC>a"<ESC>bi"<ESC>el
-vnoremap <LEADER>{ <ESC>`<i{<ESC>`>a}<ESC>`>
+" nnoremap <LEADER>' viw<ESC>a'<ESC>bi'<ESC>el
+" nnoremap <LEADER>" viw<ESC>a"<ESC>bi"<ESC>el
+" vnoremap <LEADER>" viw<ESC>a"<ESC>bi"<ESC>el
+" vnoremap <LEADER>{ <ESC>`<i{<ESC>`>a}<ESC>`>
 "vnoremap <C-c> "+y
 "inoremap <C-v> <Esc>"+pi
 "}}}
@@ -353,14 +384,13 @@ inoremap <C-k> <Esc><C-w>k
 inoremap <C-l> <Esc><C-w>l
 "}}}
 
-"mapping Ctrl/shift/tab to switch b/w tabs "{{{
-nnoremap <C-Tab> :tabnext<CR>
-nnoremap <S-Tab> :tabprevious<CR>
+"mapping Ctrl/shift/tab to switch b/w tabs "{{{2
+nnoremap <C-Tab>   :tabnext<CR>
+nnoremap <S-Tab>   :tabprevious<CR>
 nnoremap <C-S-Tab> :tabprevious<CR>
-inoremap <C-Tab> <ESC>:tabnext<CR>
-inoremap <S-Tab> <ESC>:tabprevious<CR>
-"}}}
-"}}}
+inoremap <C-Tab>   <ESC>:tabnext<CR>
+inoremap <S-Tab>   <ESC>:tabprevious<CR>
+"}}}2
 
 "My Functions "{{{
 function! DeleteTrailingSpaces()
@@ -381,20 +411,41 @@ endfunction
 function! FixMySpelling()
 	execute "normal! my[s1z=`y"
 endfunction
+
+function! MpdStart()
+	let cmd = "mpc status"
+	let result = split(system(cmd),'\n')
+	 echom result[0]
+	if(len(result) == 3)
+		return
+	elseif(len(result) == 1 )
+		let word = split(result[0],' ')[0]
+		echom word
+		if(word ==? "error:")
+			" echo "[MPD] is not running. Please start it first"
+			silent exec "!start mpd C:\\mpd\\data\\mpd.conf"  
+			silent exec "!mpc load songs" 
+		endif
+	endif
+	return
+endfunction
+
 "}}}
 
 "Highlights"{{{
-hi NonText ctermfg=7 guifg=#afafaf
+hi NonText    ctermfg=7    guifg=#afafaf
 hi SpecialKey ctermfg=7
-hi CursorLine cterm=NONE ctermbg=black
-hi VertSplit ctermbg=NONE 
+hi CursorLine cterm=NONE   ctermbg=black
+hi VertSplit  ctermbg=NONE
 "}}}
 
 "{{{ Source gvimrc if gui is available
 if has('gui_running')
 	so $VIM/_gvimrc
 endif
+" }}}
 
+"}}}3
 " hi slred guifg=#F92672 guibg=#232526 gui=bold
 " hi slgrn guifg=#A6E22E guibg=#232526 gui=bold
 " hi slorg guifg=#FD971F guibg=#232526 gui=bold
